@@ -31,8 +31,19 @@ interface Ikeyboard { }
 
 class Notebook : Computer, IMonitor, Ikeyboard
 {
-    public void TurnOn()
+    public void TurnOn() {
+    }
+   /*void IMonitor.TurnOn()
     {
+    }*/
+}
+
+class InterfaceMain
+{
+    static void Main(string[] args)
+    {
+        Notebook notebook = new Notebook();
+        notebook.TurnOn();
     }
 }
 
