@@ -5,47 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-internal interface Interface
-{
-    public abstract void Draw();
-    public abstract void Move(int offset);
-}
-
-interface IDrawinigObject
+interface IDrawingObject
 {
     void Draw();
-    void Move(int offset);
 }
 
-class Computer
+class Line : IDrawingObject
 {
-
-}
-
-interface IMonitor
-{
-    void TurnOn();
-}
-
-interface Ikeyboard { }
-
-class Notebook : Computer, IMonitor, Ikeyboard
-{
-    public void TurnOn() {
-    }
-   /*void IMonitor.TurnOn()
+    public void Draw()
     {
-    }*/
+        Console.WriteLine("Line");
+    }
+}
+
+class Rectangle : IDrawingObject
+{
+    public void Draw()
+    {
+        Console.WriteLine("Rectangle");
+    }
 }
 
 class InterfaceMain
 {
-    static void Main(string[] args)
+    static void Main(String[] args)
     {
-        Notebook notebook = new Notebook();
-        notebook.TurnOn();
+        IDrawingObject[] instances = new IDrawingObject[] { new Line(), new Rectangle() };
+
+        foreach (IDrawingObject item in instances)
+        {
+            item.Draw();
+        }
     }
 }
+
+
 
 
 
