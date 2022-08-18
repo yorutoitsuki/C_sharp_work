@@ -26,18 +26,6 @@ class Rectangle : IDrawingObject
     }
 }
 
-class InterfaceMain
-{
-    static void Main(String[] args)
-    {
-        IDrawingObject[] instances = new IDrawingObject[] { new Line(), new Rectangle() };
-
-        foreach (IDrawingObject item in instances)
-        {
-            item.Draw();
-        }
-    }
-}
 
 
 

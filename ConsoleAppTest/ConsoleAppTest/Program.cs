@@ -1,4 +1,4 @@
-﻿class Mammal
+﻿/*class Mammal
 {
     virtual public void move()
     {
@@ -25,18 +25,58 @@ class Human : Mammal
     {
         Console.WriteLine("두 발로 움직인다");
     }
+}*/
+
+interface ISource
+{
+    int GetResult();
+}
+
+class Source : ISource
+{
+    public int GetResult()
+    {
+        return 10;
+    }
+    
+    public void Test()
+    {
+        Target target = new Target();
+        target.Do(this);
+    }
+}
+
+class Target
+{
+    public void Do(ISource obj)
+    {
+        Console.WriteLine(obj.GetResult());
+    }
 }
 
 class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        Mammal one = new Lion();
+        /*Mammal one = new Lion();
         Mammal two = new Whale();
         Mammal three = new Human();
 
         one.move();
         two.move();
-        three.move();
+        three.move();*/
+
+        /* IDrawingObject[] instances = new IDrawingObject[] { new Line(), new Rectangle() };
+
+         foreach (IDrawingObject item in instances)
+         {
+             item.Draw();
+         }
+         IDrawingObject instance = new Line();
+         instance.Draw();*/
+
+        Source sc = new Source();
+        sc.Test();
+
     }
 }
