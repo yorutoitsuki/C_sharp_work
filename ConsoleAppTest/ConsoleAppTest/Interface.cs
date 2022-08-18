@@ -26,3 +26,15 @@ interface IMonitor
 {
     void TurnOn();
 }
+
+interface Ikeyboard { }
+
+class Notebook : Computer, IMonitor, Ikeyboard
+{
+    public void TurnOn()
+    {
+    }
+}
+
+
+
