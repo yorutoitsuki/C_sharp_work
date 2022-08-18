@@ -11,3 +11,18 @@ internal interface Interface
     public abstract void Move(int offset);
 }
 
+interface IDrawinigObject
+{
+    void Draw();
+    void Move(int offset);
+}
+
+class Computer
+{
+
+}
+
+interface IMonitor
+{
+    void TurnOn();
+}
