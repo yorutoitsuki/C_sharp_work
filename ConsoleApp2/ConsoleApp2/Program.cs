@@ -22,6 +22,13 @@
             CalcDelegate del2 = new CalcDelegate(Minus);
             result = del2(20, 10);
             Console.WriteLine("result = " + result);
+
+            CalcDelegate del = Plus;
+            result = del(20, 10);
+            Console.WriteLine(result);
+            del = Minus;
+            result = del(20, 10);
+            Console.WriteLine(result);
         }
     }
 }
