@@ -45,9 +45,18 @@ namespace ch4_delegate
 {
     internal class Program
     {
+        //3개의 매개 변수를 받고 void를 반환하는 델리게이트 정의
+        //매개변수의 타입이 중요할 뿐 매개변수의 이름은 임의로 정할 수 있음.
+        delegate void WorkDelegate(Char arg1, int arg2, int arg3);
         static void Main(string[] agrs)
         {
+            Mathmatics math = new Mathmatics();
+            WorkDelegate work = math.Calculate;
 
+            work('+', 10, 5);
+            work('-', 10, 5);
+            work('*', 10, 5);
+            work('/', 10, 5);
         }
     }
 }
