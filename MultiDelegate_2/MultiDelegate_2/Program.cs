@@ -24,6 +24,7 @@ namespace MultiDelegate_2
             Console.WriteLine("mul 제거");
             cal -= mul;
             cal(10, 5);
+            
         }
     }
 }
