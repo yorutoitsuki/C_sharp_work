@@ -21,44 +21,44 @@ class Person
     }
 }
 
-delegate bool CompareDelegate(Person arg1, Person arg2);
-class SortPerson
+delegate bool CompareDelegate(object arg1, object arg2);//이름, 나이 상관 없이 정렬 하기 위해 object로 타입선언
+class SortObject
 {
-    Person[] men;
+    Object[] things;
 
-    public SortPerson(Person[] name)
+    public SortObject(object[] things)
     {
-        this.men = name;
+        this.things = things;
     }
 
     public void Sort(CompareDelegate compareMethod)
     {
-        Person temp;
-        for (int i = 0; i < men.Length; i++)
+        object temp;
+        for (int i = 0; i < things.Length; i++)
         {
             int lowPos = i;
-            for (int j = 0; j < men.Length; j++)
+            for (int j = i+1; j < things.Length; j++)
             {
                 /*if (men[j].Age < men[lowPos].Age)
                 {
                     lowPos = j;
                 }*/
-                if (compareMethod(men[j], men[lowPos]))
+                if (compareMethod(things[j], things[lowPos]))
                 {
                     lowPos = j;
                 }
             }
 
-            temp = men[lowPos];
-            men[lowPos] = men[i];
-            men[i] = temp;
+            temp = things[lowPos];
+            things[lowPos] = things[i];
+            things[i] = temp;
         }
     }
     public void Display()
     {
-        for (int i = 0; i < men.Length; i++)
+        for (int i = 0; i < things.Length; i++)
         {
-            Console.WriteLine(men[i] + ",");
+            Console.WriteLine(things[i] + ",");
         }
     }
 }
@@ -68,14 +68,26 @@ namespace CallBack_Person
 {
     internal class Program
     {
-        static bool AscSortByName(Person arg1, Person arg2)
+        static bool AscSortByName(Object arg1, Object arg2)
         {
+            Person person1=null;
+            Person person2=null;
+            if (arg1 is Person)
+            {
+                person1 = arg1 as Person;//대상 타입으로 형변환
+            }
+            if(arg2 is Person)
+            {
+                person2 = arg2 as Person;
+            }
+            
+            //대상 타입으로 형변환
             /*
              * string 객체의 CompareTo 매서드는 문자열 비교를 수행
              * 문자열이 사전 정렬순으로 비교해서 크면 1, 같으면 0, 작으면 -1을 반환
              * 따라서 0 보다 작은 값을 반환한 경우 true로 가정하면 오름차순 정렬
              */
-            return arg1.Name.CompareTo(arg2.Name) < 0;
+            return person1.Name.CompareTo(person2.Name) < 0;
         }
         static void Main(string[] args)
         {
@@ -87,7 +99,7 @@ namespace CallBack_Person
                 new Person(62, "Mads")
             };
 
-            SortPerson so = new SortPerson(personArray);
+            SortObject so = new SortObject(personArray);
             so.Sort(AscSortByName);
             so.Display();
 
