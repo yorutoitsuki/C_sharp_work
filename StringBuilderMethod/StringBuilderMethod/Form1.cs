@@ -21,22 +21,25 @@ namespace StringBuilderMethod
 
         private void btnBase_Click(object sender, EventArgs e)
         {
-
+            lblResult.Text = str.ToString();
         }
 
         private void btnAppend_Click(object sender, EventArgs e)
         {
-
+            str.Append("~옹옹옹");
+            lblResult.Text = str.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            str.Remove(4, 2);
+            lblResult.Text = str.ToString();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-
+            str.Insert(4, "마느");
+            lblResult.Text=str.ToString();
         }
     }
 }

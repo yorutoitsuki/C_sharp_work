@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B315E8D-146F-4F7C-8E76-0BA485A2C461}</ProjectGuid>
+    <ProjectGuid>{F58EB381-9A17-45D8-BC9D-44BA3E5F48B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>StringBuilderMethod</RootNamespace>
-    <AssemblyName>StringBuilderMethod</AssemblyName>
+    <RootNamespace>ThreadInfo</RootNamespace>
+    <AssemblyName>ThreadInfo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
