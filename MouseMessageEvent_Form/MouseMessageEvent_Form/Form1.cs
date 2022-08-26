@@ -16,5 +16,25 @@ namespace MouseMessageEvent_Form
         {
             InitializeComponent();
         }
+
+        private void Form1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            label1.Text = "마우스 버튼 누름 : " + "좌표 : " + e.X + "," + e.Y;
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            label1.Text = "마우스 버튼 놓음 : " + "좌표 : " + e.X + "," + e.Y;
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            label2.Text = "마우스 버튼 클릭 : " + "좌표 : " + e.X + "," + e.Y;
+        }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            label1.Text = "마우스 버튼 누름 : " + "좌표 : " + e.X + "," + e.Y;
+        }
     }
 }
